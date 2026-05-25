@@ -1,0 +1,6 @@
+{
+  "name": "AI Well-being & Daily Assistant",
+  "description": "An intelligent personal assistant combining intuitive task scheduling, mood logging, mindful micro-breaks, and empathetic AI guidance to support mental health, focus, and daily well-being.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

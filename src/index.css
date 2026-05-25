@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #090d16;
+  --color-slate-deep: #cbd5e1;
+  --color-sage: #60a5fa;
+  --color-sage-light: rgba(59, 130, 246, 0.1);
+  --color-clay: #a78bfa;
+  --color-clay-light: rgba(167, 139, 250, 0.1);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-slate-deep);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Glass Theme Foundations */
+.glass-bg {
+  background: radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.18) 0%, transparent 55%),
+              radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 55%),
+              radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 55%),
+              radial-gradient(at 0% 100%, rgba(244, 114, 182, 0.18) 0%, transparent 55%),
+              radial-gradient(at 100% 100%, rgba(251, 191, 36, 0.18) 0%, transparent 55%);
+  background-color: #090d16;
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+/* Custom styles for breathing animation */
+@keyframes expandShrink {
+  0%, 100% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.15));
+  }
+  50% {
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 35px rgba(167, 139, 250, 0.35));
+  }
+}
+
+.breathing-circle-active {
+  animation: expandShrink 8s ease-in-out infinite;
+}
